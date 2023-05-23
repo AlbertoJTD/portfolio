@@ -13,11 +13,13 @@ namespace Portfolio.Controllers
             _logger = logger;
         }
 
+        // Accion 1
         public IActionResult Index()
         {
             return View();
         }
 
+        // Accion 2
         public IActionResult Privacy()
         {
             return View();
