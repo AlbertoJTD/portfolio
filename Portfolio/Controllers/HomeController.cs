@@ -16,6 +16,7 @@ namespace Portfolio.Controllers
         // Accion 1
         public IActionResult Index()
         {
+            ViewBag.Name = "Alberto"; // Send data to the view
             return View();
         }
 

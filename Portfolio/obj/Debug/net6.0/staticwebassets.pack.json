@@ -5,12 +5,20 @@
       "PackagePath": "staticwebassets\\Portfolio.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\alber\\source\\repos\\Portfolio\\Portfolio\\wwwroot\\css\\custom.css",
+      "PackagePath": "staticwebassets\\css\\custom.css"
+    },
+    {
       "Id": "C:\\Users\\alber\\source\\repos\\Portfolio\\Portfolio\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
       "Id": "C:\\Users\\alber\\source\\repos\\Portfolio\\Portfolio\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\alber\\source\\repos\\Portfolio\\Portfolio\\wwwroot\\images\\perfil.jpg",
+      "PackagePath": "staticwebassets\\images\\perfil.jpg"
     },
     {
       "Id": "C:\\Users\\alber\\source\\repos\\Portfolio\\Portfolio\\wwwroot\\js\\site.js",
