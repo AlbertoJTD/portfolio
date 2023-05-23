@@ -17,6 +17,14 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\alber\\source\\repos\\Portfolio\\Portfolio\\wwwroot\\images\\RoR.png",
+      "PackagePath": "staticwebassets\\images\\RoR.png"
+    },
+    {
+      "Id": "C:\\Users\\alber\\source\\repos\\Portfolio\\Portfolio\\wwwroot\\images\\dotnet.png",
+      "PackagePath": "staticwebassets\\images\\dotnet.png"
+    },
+    {
       "Id": "C:\\Users\\alber\\source\\repos\\Portfolio\\Portfolio\\wwwroot\\images\\perfil.jpg",
       "PackagePath": "staticwebassets\\images\\perfil.jpg"
     },
