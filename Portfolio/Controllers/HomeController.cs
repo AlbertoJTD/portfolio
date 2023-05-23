@@ -16,8 +16,12 @@ namespace Portfolio.Controllers
         // Accion 1
         public IActionResult Index()
         {
-            ViewBag.Name = "Alberto"; // Send data to the view
-            return View("Index", "Alberto 2");
+            var persona = new Persona()
+            {
+                Nombre = "Alberto",
+                Edad = 99
+            };
+            return View(persona);
         }
 
         // Accion 2

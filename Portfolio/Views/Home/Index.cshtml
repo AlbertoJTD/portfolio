@@ -1,12 +1,12 @@
 ﻿@* Tipo de dato a recibir en la vista *@
-@model string
+@model Persona
 
 @{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Soy @ViewBag.Name @Model</h1>
+    <h1 class="display-4">Soy @Model.Nombre</h1>
     <h2>Soy Desarrollador Full Stack, especializado en Ruby on Rails, JavaScript, .NET 6, Python </h2>
     <img id="foto" src="~/images/perfil.jpg" alt="Foto de Alberto" />
 </div>
