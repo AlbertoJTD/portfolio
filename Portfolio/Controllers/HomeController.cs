@@ -17,10 +17,7 @@ namespace Portfolio.Controllers
         public IActionResult Index()
         {
             var proyectos = ObtenerProyectos().Take(3).ToList();
-            var modelo = new HomeIndexViewModel()
-            {
-                Proyectos = proyectos,
-            };
+            var modelo = new HomeIndexViewModel() { Proyectos = proyectos };
             return View(modelo);
         }
 
