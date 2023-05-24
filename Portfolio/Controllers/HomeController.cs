@@ -16,12 +16,46 @@ namespace Portfolio.Controllers
         // Accion 1
         public IActionResult Index()
         {
-            var persona = new Persona()
+            var proyectos = ObtenerProyectos().Take(3).ToList();
+            var modelo = new HomeIndexViewModel()
             {
-                Nombre = "Alberto",
-                Edad = 99
+                Proyectos = proyectos,
             };
-            return View(persona);
+            return View(modelo);
+        }
+
+        private List<Proyecto> ObtenerProyectos()
+        {
+            return new List<Proyecto>() {
+                new Proyecto
+            {
+                Titulo = "Amazon",
+                Descripcion = "E-Commerce realizado con ASP.NET Core",
+                Link = "https://google.com",
+                ImagenURL= "/images/amazon.png"
+            },
+			    new Proyecto
+			{
+				Titulo = "Steam",
+				Descripcion = "Tienda videojuegos",
+				Link = "https://google.com",
+				ImagenURL= "/images/steam.png"
+			},
+				new Proyecto
+			{
+				Titulo = "Reddit",
+				Descripcion = "Red social",
+				Link = "https://google.com",
+				ImagenURL= "/images/reddit.png"
+			},
+				new Proyecto
+			{
+				Titulo = "New York Times",
+				Descripcion = "Periodico digital",
+				Link = "https://google.com",
+				ImagenURL= "/images/nyt.png"
+			},
+			};
         }
 
         // Accion 2
