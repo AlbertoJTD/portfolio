@@ -9,17 +9,22 @@ namespace Portfolio.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 		private readonly IRepositorioProyectos repositorioProyectos;
+		private readonly IConfiguration configuration;
 
 		// Inyeccion de dependencias
-		public HomeController(ILogger<HomeController> logger, IRepositorioProyectos repositorioProyectos)
+		// ILogger => mostrar mensajes
+		public HomeController(ILogger<HomeController> logger, IRepositorioProyectos repositorioProyectos, IConfiguration configuration)
         {
             _logger = logger;
 			this.repositorioProyectos = repositorioProyectos;
+			this.configuration = configuration;
 		}
 
         // Accion 1
         public IActionResult Index()
         {
+            var test = configuration.GetValue<string>("extraInfo");
+            _logger.LogInformation("Este es un mensaje de log" + test);
             var proyectos = repositorioProyectos.ObtenerProyectos().Take(3).ToList();
             var modelo = new HomeIndexViewModel() { Proyectos = proyectos };
             return View(modelo);
