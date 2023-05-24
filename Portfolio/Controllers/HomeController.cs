@@ -34,7 +34,24 @@ namespace Portfolio.Controllers
 			return View(proyectos);
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Contacto()
+        {
+            return View();
+        }
+
+        [HttpPost] // Atributo
+		public IActionResult Contacto(ContactoViewModel contacto)
+		{
+
+			return RedirectToAction("Gracias");
+		}
+
+        public IActionResult Gracias()
+        {
+            return View();
+        }
+
+		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
