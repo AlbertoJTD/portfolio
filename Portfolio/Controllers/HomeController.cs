@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Portfolio.Models;
+using Portfolio.Servicios;
 using System.Diagnostics;
 
 namespace Portfolio.Controllers
@@ -16,43 +17,10 @@ namespace Portfolio.Controllers
         // Accion 1
         public IActionResult Index()
         {
-            var proyectos = ObtenerProyectos().Take(3).ToList();
+            var repositorioProyectos = new RepositorioProyectos();
+            var proyectos = repositorioProyectos.ObtenerProyectos().Take(3).ToList();
             var modelo = new HomeIndexViewModel() { Proyectos = proyectos };
             return View(modelo);
-        }
-
-        private List<Proyecto> ObtenerProyectos()
-        {
-            return new List<Proyecto>() {
-                new Proyecto
-            {
-                Titulo = "Amazon",
-                Descripcion = "E-Commerce realizado con ASP.NET Core",
-                Link = "https://google.com",
-                ImagenURL= "/images/amazon.png"
-            },
-			    new Proyecto
-			{
-				Titulo = "Steam",
-				Descripcion = "Tienda videojuegos",
-				Link = "https://google.com",
-				ImagenURL= "/images/steam.png"
-			},
-				new Proyecto
-			{
-				Titulo = "Reddit",
-				Descripcion = "Red social",
-				Link = "https://google.com",
-				ImagenURL= "/images/reddit.png"
-			},
-				new Proyecto
-			{
-				Titulo = "New York Times",
-				Descripcion = "Periodico digital",
-				Link = "https://google.com",
-				ImagenURL= "/images/nyt.png"
-			},
-			};
         }
 
         // Accion 2
