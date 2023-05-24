@@ -8,10 +8,6 @@ builder.Services.AddControllersWithViews();
 // Cuando una clase pida una instancia de tipo 'IRepositorioProyectos', se le envie 'RepositorioProyectos'
 builder.Services.AddTransient<IRepositorioProyectos, RepositorioProyectos>();
 
-builder.Services.AddTransient<ServicioTransitorio>();
-builder.Services.AddScoped<ServicioDelimitado>();
-builder.Services.AddSingleton<ServicioUnico>();
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -9,33 +9,19 @@ namespace Portfolio.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 		private readonly IRepositorioProyectos repositorioProyectos;
-		private readonly ServicioDelimitado servicioDelimitado;
-		private readonly ServicioTransitorio servicioTransitorio;
-		private readonly ServicioUnico servicioUnico;
 
 		// Inyeccion de dependencias
-		public HomeController(ILogger<HomeController> logger, IRepositorioProyectos repositorioProyectos, ServicioDelimitado servicioDelimitado, ServicioTransitorio servicioTransitorio, ServicioUnico servicioUnico)
+		public HomeController(ILogger<HomeController> logger, IRepositorioProyectos repositorioProyectos)
         {
             _logger = logger;
 			this.repositorioProyectos = repositorioProyectos;
-			this.servicioDelimitado = servicioDelimitado;
-			this.servicioTransitorio = servicioTransitorio;
-			this.servicioUnico = servicioUnico;
 		}
 
         // Accion 1
         public IActionResult Index()
         {
             var proyectos = repositorioProyectos.ObtenerProyectos().Take(3).ToList();
-
-            var guidViewModel = new EjemploGUIDViewModel()
-            {
-                Delimitado = servicioDelimitado.ObtenerGuid,
-                Transitorio = servicioTransitorio.ObtenerGuid,
-                Unico = servicioUnico.ObtenerGuid,
-            };
-
-            var modelo = new HomeIndexViewModel() { Proyectos = proyectos, EjemploGUID_1 = guidViewModel};
+            var modelo = new HomeIndexViewModel() { Proyectos = proyectos };
             return View(modelo);
         }
 
