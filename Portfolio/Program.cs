@@ -4,7 +4,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddTransient<RepositorioProyectos>();
+
+// Cuando una clase pida una instancia de tipo 'IRepositorioProyectos', se le envie 'RepositorioProyectos'
+builder.Services.AddTransient<IRepositorioProyectos, RepositorioProyectos>();
 
 var app = builder.Build();
 
